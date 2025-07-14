@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Menü - QR Kodlu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Lezzet Durağı</h1>
+            </div>
+            <div class="header-actions">
+                <div class="qr-section">
+                    <button id="qrBtn" class="qr-btn">
+                        <i class="fas fa-qrcode"></i>
+                        QR Kod Göster
+                    </button>
+                </div>
+                <div class="admin-section">
+                    <a href="admin/login.html" class="admin-btn admin-link" target="_blank">
+                        <i class="fas fa-cog"></i>
+                        Admin Panel
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- QR Modal -->
+        <div id="qrModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>QR Kod</h2>
+                <p>Bu QR kodu telefonunuzla tarayarak menüye erişebilirsiniz</p>
+                <div id="qrcode"></div>
+                <p class="qr-url">URL: <span id="currentUrl"></span></p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" data-category="all">Tümü</button>
+            <button class="nav-btn" data-category="starters">Başlangıçlar</button>
+            <button class="nav-btn" data-category="main">Ana Yemekler</button>
+            <button class="nav-btn" data-category="grill">Izgara</button>
+            <button class="nav-btn" data-category="desserts">Tatlılar</button>
+            <button class="nav-btn" data-category="drinks">İçecekler</button>
+        </nav>
+
+        <!-- Menu Grid -->
+        <main class="menu-grid" id="menuGrid">
+            <!-- Menu items will be populated by JavaScript -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>İletişim</h3>
+                    <p class="phone"><i class="fas fa-phone"></i> +90 555 123 45 67</p>
+                    <p class="address"><i class="fas fa-map-marker-alt"></i> Örnek Mahallesi, Lezzet Sokak No:123</p>
+                    <p class="hours"><i class="fas fa-clock"></i> Her gün 11:00 - 23:00</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
